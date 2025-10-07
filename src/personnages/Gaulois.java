@@ -31,6 +31,10 @@ public class Gaulois {
 			effetPotion --;
 		}
 	}
+	
+	public void setVillage(Village village) {
+		
+	}
 
 	public void boirepotion(Integer forcepotion) {
 		effetPotion = forcepotion;		
