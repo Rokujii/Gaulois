@@ -5,7 +5,8 @@ public class Gaulois {
 	
 	private String nom;
 	private int force;
-	private  Integer effetPotion = 1;
+	private int effetPotion = 1;
+	private Village village = null;
 
 	public Gaulois(String nom, int force) {
 		this.nom = nom;
@@ -14,6 +15,11 @@ public class Gaulois {
 
 	public String getNom() {
 		return nom;
+	}
+	
+	@Override
+	public String toString() {
+		return this.nom;
 	}
 
 	public void parler(String texte) {
@@ -33,13 +39,23 @@ public class Gaulois {
 	}
 	
 	public void setVillage(Village village) {
-		
+		this.village = village;
 	}
 
 	public void boirepotion(Integer forcepotion) {
 		effetPotion = forcepotion;		
 	}
-
+	
+	public void sePresenter() {
+		if (this == village.getChef()) {
+			System.out.println("Bonjour, je m'appelle " + this.getNom() + ". Je suis le chef du village \"" + village.getNom() + "\"");
+		}
+		else if (this.village == null) 
+			System.out.println("Le Gaulois " + this.getNom() + ": Bonjour, je m'appelle " + this.getNom() + ". Je voyage de villages en villages.");
+		
+		else 
+			System.out.println("Le Gaulois " + this.getNom() + ": Bonjour, je m'appelle " + this.getNom() + ". J'habite le village \"" + village.getNom() + "\".");
+	}
 }
 
 
