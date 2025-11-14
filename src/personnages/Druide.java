@@ -16,25 +16,27 @@ public class Druide {
 	}
 
 	public void parler(String texte) {
-		System.out.println(prendreparole() + texte );		
+		System.out.println(prendreParole() + texte );		
 	}
 
-	private String prendreparole() {
+	private String prendreParole() {
 		return "Le druide " + nom + " :";
 	}
 
-	public void fabriquerportion(Integer quantite , Integer forcepotion){
-		chaudron.remplirchaudron(quantite, forcepotion);
-		parler("J'ai concocté "+ quantite +" doses de potion magique. Elle a une force de "+ forcepotion);				
+	public void fabriquerPotion(Integer quantite , Integer forcePotion){
+		chaudron.remplirChaudron(quantite, forcePotion);
+		parler("J'ai concocté "+ quantite 
+		+ " doses de potion magique. Elle a une force de "
+		+ forcePotion);
 	}
 
 	public void booster(Gaulois gaulois) {
-		if ( chaudron.resterpotion() == false) {
+		if ( chaudron.resterPotion() == false) {
 			if (gaulois.getNom() == "Obelix") {
 				parler("Non, "+ gaulois.getNom() + " Non !... Et tu le sais très bien !");		
 			}
 			else {
-				gaulois.boirepotion(chaudron.prendreLouche());
+				gaulois.boirePotion(chaudron.prendreLouche());
 				parler("Tiens " + gaulois.getNom() + " un peu de potion magique.");	
 			}
 		}
@@ -43,7 +45,7 @@ public class Druide {
 		}		
 	}
 
-	public String getnom() {
+	public String getNom() {
 		return nom;
 
 	}

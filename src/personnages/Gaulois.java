@@ -29,6 +29,10 @@ public class Gaulois {
 	private String prendreParole() {
 		return "Le gaulois " + nom + " : ";
 	}
+	
+	public void setVillage(Village village) {
+		this.village = village;
+	}
 
 	public void frapper(Romain romain) {
 		System.out.println(nom +" envoie un gros coup à la machoire de "+ romain.getNom());
@@ -38,24 +42,31 @@ public class Gaulois {
 		}
 	}
 	
-	public void setVillage(Village village) {
-		this.village = village;
-	}
-
-	public void boirepotion(Integer forcepotion) {
-		effetPotion = forcepotion;		
+	public void boirePotion(int forcePotion) {
+		this.effetPotion = forcePotion;
 	}
 	
 	public void sePresenter() {
-		if (this == village.getChef()) {
-			System.out.println("Bonjour, je m'appelle " + this.getNom() + ". Je suis le chef du village \"" + village.getNom() + "\"");
-		}
-		else if (this.village == null) 
-			System.out.println("Le Gaulois " + this.getNom() + ": Bonjour, je m'appelle " + this.getNom() + ". Je voyage de villages en villages.");
-		
-		else 
-			System.out.println("Le Gaulois " + this.getNom() + ": Bonjour, je m'appelle " + this.getNom() + ". J'habite le village \"" + village.getNom() + "\".");
+	    // 1 : pas de village
+	    if (this.village == null) {
+	        System.out.println("Le Gaulois " + this.getNom()
+	            + " : Bonjour, je m'appelle " + this.getNom()
+	            + ". Je voyage de villages en villages.");
+	    }
+	    // 2 : chef
+	    else if (this == village.getChef()) {
+	        System.out.println("Le Gaulois " + this.getNom()
+	            + " : Bonjour, je m'appelle " + this.getNom()
+	            + ". Je suis le chef du village \"" + village.getNom() + "\".");
+	    }
+	    // 3 : habitant
+	    else {
+	        System.out.println("Le Gaulois " + this.getNom()
+	            + " : Bonjour, je m'appelle " + this.getNom()
+	            + ". J'habite le village \"" + village.getNom() + "\".");
+	    }
 	}
 }
+
 
 

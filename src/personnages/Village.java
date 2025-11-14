@@ -12,6 +12,7 @@ public class Village {
 		this.nom = nom;
 		this.nbVillageois = 0;
 		this.villageois = new Gaulois[NB_VILLAGEOIS_MAX];
+		chef.setVillage(this);
 	}
 	
 	public String getNom() {
@@ -21,7 +22,7 @@ public class Village {
 	public Gaulois getChef() {
 		return this.chef;
 	}
-	
+
 	public void ajouterVillageois(Gaulois gaulois) {
 		villageois[nbVillageois] = gaulois;
 		nbVillageois++;

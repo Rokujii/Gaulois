@@ -3,20 +3,20 @@ package objets;
 
 public class Chaudron {
 
-	private int quantitepotion ;
-	private int forcepotion ; 
+	private int quantitePotion ;
+	private int forcePotion ; 
 
 	public Chaudron() {
 		
 	}
 
-	public void remplirchaudron(int quantite , int forcepotion) {
-		quantitepotion = quantite;
-		this.forcepotion = forcepotion;
+	public void remplirChaudron(int quantite , int forcepotion) {
+		quantitePotion = quantite;
+		this.forcePotion = forcepotion;
 	}
 
-	public boolean resterpotion() {
-		if (quantitepotion ==0) {
+	public boolean resterPotion() {
+		if (quantitePotion ==0) {
 			return true;		
 		}
 		else {
@@ -25,12 +25,12 @@ public class Chaudron {
 	}
 
 	public int prendreLouche() {
-		if (quantitepotion == 0) {
-			return forcepotion = 0 ;
+		if (quantitePotion == 0) {
+			return forcePotion = 0 ;
 		}
 		else {
-			quantitepotion --;
-			return forcepotion;
+			quantitePotion --;
+			return forcePotion;
 		}
 	}
 }
